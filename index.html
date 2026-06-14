@@ -1,0 +1,1630 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Decreto 351/79 — Reglamento de Higiene y Seguridad en el Trabajo
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #23262b;
+        --ink-soft: #5c6066;
+        --paper: #f6f2e8;
+        --paper-2: #efe9da;
+        --line: #dcd4c2;
+        --dark: #1c1f24;
+        --dark-2: #26292f;
+        --blue: #2f5d8a;
+        --green: #3f7a5d;
+        --amber: #b9831b;
+        --red: #b23a2e;
+        --redDeep: #8a2a1f;
+        --cream-on-dark: #f3ecde;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: "Source Serif 4", Georgia, serif;
+        background: var(--paper);
+        color: var(--ink);
+        line-height: 1.65;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      .label,
+      .badge,
+      .nav-link,
+      .stamp,
+      .tag {
+        font-family: "Oswald", sans-serif;
+        letter-spacing: 0.03em;
+      }
+      .mono {
+        font-family: "IBM Plex Mono", monospace;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      /* ============ LAYOUT ============ */
+      .page {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        min-height: 100vh;
+      }
+      @media (max-width: 900px) {
+        .page {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ============ SIDEBAR ============ */
+      .sidebar {
+        background: var(--dark);
+        color: var(--cream-on-dark);
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow-y: auto;
+        padding: 28px 22px 40px;
+        border-right: 6px solid var(--amber);
+      }
+      @media (max-width: 900px) {
+        .sidebar {
+          position: relative;
+          height: auto;
+          border-right: none;
+          border-bottom: 6px solid var(--amber);
+        }
+        .sidebar.collapsed .sidebar-body {
+          display: none;
+        }
+      }
+
+      .sidebar-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 22px;
+      }
+      .sidebar-title {
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        color: #9aa0a8;
+        line-height: 1.4;
+      }
+      .sidebar-title strong {
+        display: block;
+        font-size: 1.15rem;
+        color: #fff;
+        margin-bottom: 2px;
+      }
+      .nav-toggle {
+        display: none;
+        background: none;
+        border: 1px solid #444a52;
+        color: var(--cream-on-dark);
+        font-family: "Oswald", sans-serif;
+        font-size: 0.75rem;
+        padding: 6px 10px;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      @media (max-width: 900px) {
+        .nav-toggle {
+          display: inline-block;
+        }
+      }
+
+      .nav-group {
+        margin-bottom: 18px;
+      }
+      .nav-group-title {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        color: #7c828a;
+        margin: 0 0 6px;
+        padding-bottom: 4px;
+        border-bottom: 1px solid #383c43;
+      }
+      .nav-link {
+        display: flex;
+        gap: 8px;
+        align-items: baseline;
+        font-size: 0.82rem;
+        text-decoration: none;
+        color: #cfd3d8;
+        padding: 5px 0;
+        border-left: 3px solid transparent;
+        padding-left: 8px;
+        transition:
+          color 0.15s,
+          border-color 0.15s;
+      }
+      .nav-link:hover,
+      .nav-link.active {
+        color: #fff;
+        border-left-color: var(--amber);
+      }
+      .nav-link .n {
+        color: #80868d;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.7rem;
+        flex-shrink: 0;
+      }
+
+      /* ============ MAIN ============ */
+      main {
+        padding: 0;
+      }
+
+      /* HERO */
+      .hero {
+        background:
+          repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.025) 0 1px,
+            transparent 1px 28px
+          ),
+          repeating-linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.025) 0 1px,
+            transparent 1px 28px
+          ),
+          linear-gradient(160deg, var(--dark) 0%, var(--dark-2) 100%);
+        color: var(--cream-on-dark);
+        padding: 72px 56px 64px;
+        position: relative;
+        overflow: hidden;
+      }
+      @media (max-width: 700px) {
+        .hero {
+          padding: 48px 24px 48px;
+        }
+      }
+
+      .hero .eyebrow {
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        color: var(--amber);
+        margin-bottom: 14px;
+      }
+      .hero h1 {
+        font-size: clamp(2rem, 5vw, 3.6rem);
+        line-height: 1.1;
+        margin: 0 0 18px;
+        color: #fff;
+        max-width: 14ch;
+      }
+      .hero p.lead {
+        max-width: 58ch;
+        font-size: 1.05rem;
+        color: #c9cdd2;
+        margin: 0 0 28px;
+      }
+      .hero .meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+      .meta-chip {
+        border: 1px solid #454a52;
+        border-radius: 3px;
+        padding: 8px 14px;
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        color: #b9bec4;
+        font-family: "Oswald", sans-serif;
+      }
+      .meta-chip strong {
+        color: #fff;
+      }
+
+      /* stamp */
+      .stamp {
+        position: absolute;
+        top: 36px;
+        right: 48px;
+        width: 128px;
+        height: 128px;
+        border: 3px solid var(--red);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--red);
+        transform: rotate(-14deg);
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        line-height: 1.3;
+        opacity: 0.85;
+      }
+      .stamp::before,
+      .stamp::after {
+        content: "";
+        position: absolute;
+        border: 1px solid var(--red);
+        border-radius: 50%;
+      }
+      .stamp::before {
+        inset: 8px;
+      }
+      @media (max-width: 700px) {
+        .stamp {
+          display: none;
+        }
+      }
+
+      /* INTRO */
+      .intro {
+        padding: 48px 56px;
+        border-bottom: 1px solid var(--line);
+        background: var(--paper-2);
+      }
+      @media (max-width: 700px) {
+        .intro {
+          padding: 36px 24px;
+        }
+      }
+      .intro-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 28px;
+        margin-top: 28px;
+      }
+      .intro h2 {
+        font-size: 1.5rem;
+        margin: 0 0 12px;
+      }
+      .intro p {
+        max-width: 70ch;
+        color: var(--ink-soft);
+        margin: 0;
+      }
+      .stat {
+        border-top: 3px solid var(--amber);
+        padding-top: 10px;
+      }
+      .stat .num {
+        font-family: "Oswald", sans-serif;
+        font-size: 2.1rem;
+        font-weight: 600;
+        display: block;
+      }
+      .stat .cap {
+        font-size: 0.78rem;
+        color: var(--ink-soft);
+        text-transform: uppercase;
+      }
+
+      /* SECTION HEADERS (Título) */
+      .titulo {
+        padding: 54px 56px 8px;
+      }
+      @media (max-width: 700px) {
+        .titulo {
+          padding: 40px 24px 4px;
+        }
+      }
+      .titulo .num {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.78rem;
+        color: var(--ink-soft);
+        text-transform: uppercase;
+        margin-bottom: 6px;
+      }
+      .titulo h2 {
+        font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+        margin: 0 0 10px;
+        border-bottom: 3px solid var(--accent, var(--amber));
+        display: inline-block;
+        padding-bottom: 8px;
+      }
+      .titulo .desc {
+        max-width: 72ch;
+        color: var(--ink-soft);
+        margin: 6px 0 0;
+      }
+
+      /* CHAPTER CARDS */
+      .chapters {
+        padding: 20px 56px 10px;
+        display: grid;
+        gap: 22px;
+      }
+      @media (max-width: 700px) {
+        .chapters {
+          padding: 10px 24px;
+        }
+      }
+
+      .chapter {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-left: 8px solid var(--accent, var(--amber));
+        border-radius: 4px;
+        padding: 24px 28px;
+        position: relative;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+      }
+      .chapter-head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 10px;
+      }
+      .chapter h3 {
+        font-size: 1.25rem;
+        margin: 0;
+        color: var(--ink);
+      }
+      .chapter h3 .cap-no {
+        color: var(--accent, var(--amber));
+        margin-right: 8px;
+      }
+      .art-range {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        color: var(--accent, var(--amber));
+        border: 1px solid var(--accent, var(--amber));
+        border-radius: 999px;
+        padding: 4px 12px;
+        white-space: nowrap;
+      }
+      .chapter p {
+        margin: 0 0 12px;
+        color: var(--ink-soft);
+      }
+      .chapter ul {
+        margin: 0;
+        padding-left: 0;
+        list-style: none;
+        display: grid;
+        gap: 8px;
+      }
+      .chapter li {
+        padding-left: 18px;
+        position: relative;
+        font-size: 0.95rem;
+      }
+      .chapter li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.55em;
+        width: 8px;
+        height: 8px;
+        background: var(--accent, var(--amber));
+        border-radius: 2px;
+      }
+      .derogado-note {
+        font-size: 0.85rem;
+        color: var(--ink-soft);
+        border-left: 3px dashed var(--ink-soft);
+        padding-left: 12px;
+        margin-top: 8px;
+        font-style: italic;
+      }
+
+      /* COLOR LEGEND (Cap 12) */
+      .swatches {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 14px;
+      }
+      .swatch {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 5px 12px 5px 5px;
+        font-size: 0.78rem;
+        color: var(--ink-soft);
+      }
+      .swatch .dot {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+      }
+
+      /* ANEXOS TABLE */
+      .anexos {
+        padding: 54px 56px 70px;
+      }
+      @media (max-width: 700px) {
+        .anexos {
+          padding: 40px 24px 50px;
+        }
+      }
+      .anexos h2 {
+        font-size: 1.7rem;
+        margin: 0 0 6px;
+        border-bottom: 3px solid var(--ink);
+        display: inline-block;
+        padding-bottom: 8px;
+      }
+      .anexos p.desc {
+        color: var(--ink-soft);
+        max-width: 70ch;
+        margin: 10px 0 26px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        border: 1px solid var(--line);
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--line);
+        font-size: 0.92rem;
+      }
+      th {
+        font-family: "Oswald", sans-serif;
+        text-transform: uppercase;
+        font-size: 0.74rem;
+        letter-spacing: 0.06em;
+        color: var(--ink-soft);
+        background: var(--paper-2);
+      }
+      td:first-child {
+        font-family: "IBM Plex Mono", monospace;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      /* FOOTER */
+      footer {
+        background: var(--dark);
+        color: #9aa0a8;
+        padding: 32px 56px 40px;
+        font-size: 0.82rem;
+      }
+      @media (max-width: 700px) {
+        footer {
+          padding: 28px 24px;
+        }
+      }
+      footer a {
+        color: var(--amber);
+        text-decoration: none;
+      }
+      footer .foot-grid {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 16px;
+        border-top: 1px solid #383c43;
+        padding-top: 18px;
+        margin-top: 18px;
+      }
+
+      /* reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      /* focus visibility */
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid var(--amber);
+        outline-offset: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <!-- ===================== SIDEBAR ===================== -->
+      <nav class="sidebar" id="sidebar">
+        <div class="sidebar-head">
+          <div class="sidebar-title">
+            <strong>Decreto 351/79</strong>
+            Anexo I · Índice
+          </div>
+          <button class="nav-toggle" id="navToggle" aria-expanded="true">
+            Índice
+          </button>
+        </div>
+        <div class="sidebar-body" id="sidebarBody">
+          <div class="nav-group">
+            <p class="nav-group-title">General</p>
+            <a class="nav-link" href="#intro"
+              ><span class="n">—</span> Resumen general</a
+            >
+          </div>
+
+          <div class="nav-group">
+            <p class="nav-group-title">Título I</p>
+            <a class="nav-link" href="#t1"
+              ><span class="n">Art. 1–7</span> Disposiciones generales</a
+            >
+          </div>
+
+          <div class="nav-group">
+            <p class="nav-group-title">Título II</p>
+            <a class="nav-link" href="#t2"
+              ><span class="n">Cap. 2–4</span> Medicina e H&amp;S (derogado)</a
+            >
+          </div>
+
+          <div class="nav-group">
+            <p class="nav-group-title">Título III · Construcción</p>
+            <a class="nav-link" href="#cap5"
+              ><span class="n">42–56</span> Proyecto e instalación</a
+            >
+            <a class="nav-link" href="#cap6"
+              ><span class="n">57–58</span> Agua potable</a
+            >
+            <a class="nav-link" href="#cap7"
+              ><span class="n">59</span> Desagües industriales</a
+            >
+          </div>
+
+          <div class="nav-group">
+            <p class="nav-group-title">Título IV · Ambiente laboral</p>
+            <a class="nav-link" href="#cap8"
+              ><span class="n">60</span> Carga térmica</a
+            >
+            <a class="nav-link" href="#cap9"
+              ><span class="n">61</span> Contaminación ambiental</a
+            >
+            <a class="nav-link" href="#cap10"
+              ><span class="n">62–63</span> Radiaciones</a
+            >
+            <a class="nav-link" href="#cap11"
+              ><span class="n">64–70</span> Ventilación</a
+            >
+            <a class="nav-link" href="#cap12"
+              ><span class="n">71–84</span> Iluminación y color</a
+            >
+            <a class="nav-link" href="#cap13"
+              ><span class="n">85–94</span> Ruidos y vibraciones</a
+            >
+          </div>
+
+          <div class="nav-group">
+            <p class="nav-group-title">Título V · Instalaciones y riesgos</p>
+            <a class="nav-link" href="#cap14"
+              ><span class="n">95–102</span> Instalaciones eléctricas</a
+            >
+            <a class="nav-link" href="#cap15"
+              ><span class="n">103–137</span> Máquinas y herramientas</a
+            >
+            <a class="nav-link" href="#cap16"
+              ><span class="n">138–144</span> Aparatos a presión</a
+            >
+            <a class="nav-link" href="#cap17"
+              ><span class="n">145–159</span> Riesgos especiales</a
+            >
+            <a class="nav-link" href="#cap18"
+              ><span class="n">160–162</span> Protección contra incendios</a
+            >
+          </div>
+
+          <div class="nav-group">
+            <p class="nav-group-title">Referencia</p>
+            <a class="nav-link" href="#anexos"
+              ><span class="n">I–VII</span> Anexos técnicos</a
+            >
+          </div>
+        </div>
+      </nav>
+
+      <!-- ===================== MAIN ===================== -->
+      <main>
+        <!-- HERO -->
+        <header class="hero">
+          <div class="stamp">vigente<br />desde<br />1979</div>
+          <p class="eyebrow">Ley N.º 19.587 · Decreto N.º 351/79 · Anexo I</p>
+          <h1>Reglamento de Higiene y Seguridad en el Trabajo</h1>
+          <p class="lead">
+            Guía de lectura rápida del Anexo I del Decreto 351/79, la norma
+            marco que fija las condiciones mínimas de seguridad e higiene que
+            deben cumplir los establecimientos de la República Argentina: desde
+            el diseño edilicio hasta la protección contra incendios, pasando por
+            ambiente térmico, ruido, iluminación, electricidad, máquinas y
+            sustancias peligrosas.
+          </p>
+          <div class="meta-row">
+            <div class="meta-chip"><strong>5</strong> títulos</div>
+            <div class="meta-chip"><strong>18</strong> capítulos vigentes</div>
+            <div class="meta-chip"><strong>162+</strong> artículos</div>
+            <div class="meta-chip">
+              <strong>7</strong> anexos técnicos (I–VII)
+            </div>
+          </div>
+        </header>
+
+        <!-- INTRO -->
+        <section class="intro" id="intro">
+          <h2>De qué se trata esta norma</h2>
+          <p>
+            El Decreto 351/79 reglamenta la Ley 19.587 de Higiene y Seguridad en
+            el Trabajo. Establece las obligaciones que recaen sobre cualquier
+            persona física o jurídica que instale, explote o administre un
+            establecimiento donde se realicen tareas con presencia de personas,
+            y organiza esas obligaciones en cinco grandes títulos que van de lo
+            general (alcance y autoridad de aplicación) a lo específico
+            (instalaciones, máquinas, sustancias peligrosas e incendios). Varios
+            capítulos originales —los referidos a los servicios de medicina y de
+            higiene y seguridad— fueron derogados y reemplazados por regímenes
+            posteriores, por lo que esta guía se concentra en el cuerpo
+            normativo hoy vigente.
+          </p>
+          <div class="intro-grid">
+            <div class="stat">
+              <span class="num">Título III</span>
+              <span class="cap"
+                >Características constructivas de los establecimientos</span
+              >
+            </div>
+            <div class="stat">
+              <span class="num">Título IV</span>
+              <span class="cap"
+                >Condiciones de higiene en los ambientes laborales</span
+              >
+            </div>
+            <div class="stat">
+              <span class="num">Título V</span>
+              <span class="cap"
+                >Instalaciones, equipos y trabajos con riesgos especiales</span
+              >
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================== TÍTULO I ===================== -->
+        <section id="t1" style="--accent: var(--ink)">
+          <div class="titulo">
+            <p class="num">Título I · Capítulo 1</p>
+            <h2>Disposiciones generales</h2>
+            <p class="desc">
+              Define a quién aplica el reglamento, qué se entiende por
+              "establecimiento" y cómo se incorporan nuevas normas técnicas al
+              cuerpo legal.
+            </p>
+          </div>
+          <div class="chapters">
+            <article class="chapter">
+              <div class="chapter-head">
+                <h3><span class="cap-no">01</span>Establecimientos</h3>
+                <span class="art-range">Art. 1–7</span>
+              </div>
+              <p>
+                Fija el alcance general: todo establecimiento nuevo, ampliado o
+                modificado debe cumplir la Ley 19.587 y sus reglamentaciones, y
+                los ya en funcionamiento deben adecuarse según los criterios que
+                fije la Superintendencia de Riesgos del Trabajo.
+              </p>
+              <ul>
+                <li>
+                  Quienes adquieran, exploten o administren un establecimiento
+                  asumen todas las responsabilidades y obligaciones de la ley,
+                  aunque no lo hayan instalado ellos.
+                </li>
+                <li>
+                  "Establecimiento" es cualquier unidad técnica o de ejecución
+                  donde se realicen tareas con presencia de personas físicas,
+                  sin importar su naturaleza.
+                </li>
+                <li>
+                  Las recomendaciones técnicas de organismos nacionales,
+                  extranjeros o internacionales (OIT, OMS) pasan a integrar el
+                  reglamento una vez aprobadas por la Superintendencia de
+                  Riesgos del Trabajo.
+                </li>
+                <li>
+                  Las normas técnicas de la Dirección Nacional de Higiene y
+                  Seguridad en el Trabajo forman parte de esta reglamentación.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <!-- ===================== TÍTULO II ===================== -->
+        <section id="t2" style="--accent: var(--ink-soft)">
+          <div class="titulo">
+            <p class="num">Título II · Capítulos 2 a 4</p>
+            <h2>Prestaciones de medicina e higiene y seguridad</h2>
+            <p class="desc">
+              Capítulos sobre servicios médicos y servicios de higiene y
+              seguridad en el trabajo dentro de cada establecimiento.
+            </p>
+          </div>
+          <div class="chapters">
+            <article class="chapter">
+              <div class="chapter-head">
+                <h3>
+                  <span class="cap-no">02–04</span>Servicios / Medicina del
+                  Trabajo / H&amp;S
+                </h3>
+                <span class="art-range">Derogados</span>
+              </div>
+              <p class="derogado-note">
+                Estos capítulos fueron derogados por el Decreto 1338/96 (B.O.
+                28/11/1996). El régimen de servicios de medicina del trabajo y
+                de servicios de higiene y seguridad en el trabajo —su
+                composición, funciones y dotación obligatoria de profesionales—
+                quedó reemplazado por esa norma posterior y sus actualizaciones,
+                por lo que no se desarrolla aquí.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- ===================== TÍTULO III ===================== -->
+        <section style="--accent: var(--blue)">
+          <div class="titulo">
+            <p class="num">Título III · Capítulos 5 a 7</p>
+            <h2>Características constructivas de los establecimientos</h2>
+            <p class="desc">
+              Cómo deben proyectarse, distribuirse y equiparse los edificios e
+              instalaciones: locales de trabajo, servicios sanitarios,
+              vestuarios, comedores, provisión de agua y desagües.
+            </p>
+          </div>
+          <div class="chapters">
+            <article class="chapter" id="cap5" style="--accent: var(--blue)">
+              <div class="chapter-head">
+                <h3>
+                  <span class="cap-no">05</span>Proyecto, instalación,
+                  ampliación, acondicionamiento y modificación
+                </h3>
+                <span class="art-range">Art. 42–56</span>
+              </div>
+              <p>
+                Todo proyecto nuevo o modificación debe garantizar un
+                funcionalismo adecuado en la distribución de locales, previendo
+                higiene y seguridad tanto para la operación normal como para
+                emergencias. Donde no existan códigos municipales propios, se
+                toma como referencia el de la Ciudad de Buenos Aires (solo para
+                aspectos constructivos).
+              </p>
+              <ul>
+                <li>
+                  <strong>Materiales y estructura:</strong> construcciones y
+                  equipos deben mantener sus propiedades durante toda su vida
+                  útil, con cálculos ajustados a la mejor técnica y a los
+                  coeficientes de resistencia exigidos.
+                </li>
+                <li>
+                  <strong>Servicios sanitarios:</strong> baños independientes
+                  por sexo, con cantidades mínimas escalonadas según la dotación
+                  (1 inodoro/lavabo/ducha hasta 5 trabajadores, sumando unidades
+                  cada 10–20 personas adicionales).
+                </li>
+                <li>
+                  <strong>Vestuarios:</strong> obligatorios con más de 10
+                  operarios por sexo, con armarios individuales —dobles si se
+                  manipulan sustancias tóxicas o irritantes— y materiales no
+                  combustibles ni porosos.
+                </li>
+                <li>
+                  <strong>Comedores y cocinas:</strong> ubicados aisladamente
+                  del resto del establecimiento, con pisos y paredes lisos y de
+                  fácil limpieza, ventilación, iluminación y temperatura
+                  adecuadas, y campanas de extracción si hay vapores.
+                </li>
+                <li>
+                  <strong>Servicios de medicina y de H&amp;S:</strong> locales
+                  agrupados como unidad funcional, con superficies mínimas de 50
+                  m² y 30 m² respectivamente, y servicios sanitarios propios.
+                </li>
+                <li>
+                  <strong>Trabajo transitorio al aire libre:</strong> si el
+                  personal no puede regresar diariamente a su residencia, deben
+                  proveerse dormitorios, comedores y servicios sanitarios con
+                  agua para uso humano.
+                </li>
+              </ul>
+            </article>
+
+            <article class="chapter" id="cap6" style="--accent: var(--blue)">
+              <div class="chapter-head">
+                <h3><span class="cap-no">06</span>Provisión de agua potable</h3>
+                <span class="art-range">Art. 57–58</span>
+              </div>
+              <p>
+                Todo establecimiento debe contar con provisión y reserva de agua
+                para uso humano (beber, higienizarse, preparar alimentos),
+                eliminando toda fuente de contaminación y garantizando una
+                reserva mínima de 50 litros por persona y jornada cuando la
+                provisión depende del propio establecimiento.
+              </p>
+              <ul>
+                <li>
+                  Obligación de analizar el agua —bacteriológica, física y
+                  químicamente— al iniciar actividades, al entrar en vigencia la
+                  reglamentación y luego de forma periódica (análisis
+                  bacteriológico semestral y físico-químico anual).
+                </li>
+                <li>
+                  Si el agua de uso industrial no es apta para consumo humano,
+                  deben tomarse medidas preventivas y señalizar claramente las
+                  fuentes no potables.
+                </li>
+                <li>
+                  El Artículo 58 fija los valores límite de potabilidad:
+                  turbiedad, color, pH, metales (arsénico, cadmio, cromo, plomo,
+                  mercurio, etc.), dureza, cloro residual, parámetros
+                  microbiológicos (coliformes, <em>E. coli</em>,
+                  <em>Pseudomonas</em>) y contaminantes orgánicos (plaguicidas,
+                  solventes clorados, hidrocarburos).
+                </li>
+              </ul>
+            </article>
+
+            <article class="chapter" id="cap7" style="--accent: var(--blue)">
+              <div class="chapter-head">
+                <h3><span class="cap-no">07</span>Desagües industriales</h3>
+                <span class="art-range">Art. 59</span>
+              </div>
+              <p>
+                Los efluentes industriales deben recogerse y canalizarse para
+                impedir su escurrimiento libre por los pisos, conduciéndolos a
+                un punto de captación para su evacuación, con conductos cerrados
+                cuando exista riesgo de contaminación.
+              </p>
+              <ul>
+                <li>
+                  Líquidos que puedan reaccionar generando vapores tóxicos o
+                  calor deben canalizarse por circuitos separados.
+                </li>
+                <li>
+                  Los conductos deben ser sólidos, compatibles con la naturaleza
+                  físico-química de los líquidos y no generar desniveles que
+                  originen riesgo de caída.
+                </li>
+                <li>
+                  Los efluentes se evacúan a plantas de tratamiento según la
+                  legislación local, y esas plantas deben limpiarse
+                  periódicamente con protección personal para quienes lo hagan.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <!-- ===================== TÍTULO IV ===================== -->
+        <section style="--accent: var(--green)">
+          <div class="titulo">
+            <p class="num">Título IV · Capítulos 8 a 13</p>
+            <h2>Condiciones de higiene en los ambientes laborales</h2>
+            <p class="desc">
+              El "clima" del puesto de trabajo: calor, contaminantes en el aire,
+              radiaciones, ventilación, luz, color, ruido y vibraciones.
+            </p>
+          </div>
+          <div class="chapters">
+            <article class="chapter" id="cap8" style="--accent: var(--green)">
+              <div class="chapter-head">
+                <h3><span class="cap-no">08</span>Carga térmica</h3>
+                <span class="art-range">Art. 60</span>
+              </div>
+              <p>
+                Define carga térmica ambiental (intercambio de calor entre el
+                trabajador y el ambiente) y carga térmica total (esa carga más
+                el calor generado por el propio metabolismo durante la tarea).
+              </p>
+              <ul>
+                <li>
+                  Las condiciones higrotérmicas se evalúan midiendo temperatura
+                  de bulbo seco, bulbo húmedo natural y de globo, según el
+                  instrumental del Anexo II.
+                </li>
+                <li>
+                  El calor metabólico se estima con tablas según la postura y el
+                  grado de actividad del trabajador.
+                </li>
+                <li>
+                  Si la carga térmica varía durante la jornada (por cambios
+                  ambientales, tareas distintas o desplazamientos), debe medirse
+                  cada condición habitual de trabajo y aplicarse el índice del
+                  Anexo II para verificar que sea admisible.
+                </li>
+              </ul>
+            </article>
+
+            <article class="chapter" id="cap9" style="--accent: var(--green)">
+              <div class="chapter-head">
+                <h3><span class="cap-no">09</span>Contaminación ambiental</h3>
+                <span class="art-range">Art. 61</span>
+              </div>
+              <p>
+                Todo lugar de trabajo cuyos procesos generen gases, vapores,
+                humos, nieblas, polvos, fibras o aerosoles debe contar con
+                dispositivos que mantengan esos contaminantes por debajo de los
+                niveles que afecten la salud.
+              </p>
+              <ul>
+                <li>
+                  El Anexo III fija las concentraciones máximas permisibles por
+                  sustancia, revisadas anualmente.
+                </li>
+                <li>
+                  Donde se generen contaminantes o se almacenen sustancias
+                  agresivas, deben hacerse análisis de aire periódicos,
+                  programados y evaluados por un profesional universitario.
+                </li>
+                <li>
+                  Si la combinación de varios contaminantes resulta más riesgosa
+                  que cada uno por separado, la autoridad puede exigir
+                  concentraciones menores a las de la tabla general.
+                </li>
+                <li>
+                  Las inspecciones deben documentarse en actas: descripción del
+                  proceso, condiciones operativas, técnica de muestreo, cantidad
+                  de muestras, tiempo y frecuencia de exposición.
+                </li>
+              </ul>
+            </article>
+
+            <article class="chapter" id="cap10" style="--accent: var(--green)">
+              <div class="chapter-head">
+                <h3><span class="cap-no">10</span>Radiaciones</h3>
+                <span class="art-range">Art. 62–63</span>
+              </div>
+              <p>
+                Distingue radiaciones ionizantes (rayos X, materiales
+                radiactivos y nucleares) de las no ionizantes (infrarrojas,
+                ultravioletas, microondas).
+              </p>
+              <ul>
+                <li>
+                  <strong>Ionizantes:</strong> la autoridad competente es la
+                  Secretaría de Salud Pública (equipos de rayos X) o la Comisión
+                  Nacional de Energía Atómica (materiales
+                  radiactivos/nucleares), que otorgan las licencias obligatorias
+                  para fabricar, instalar u operar estos equipos y solo permiten
+                  su manejo a personal habilitado.
+                </li>
+                <li>
+                  <strong>Infrarrojas:</strong> exigen pantallas, cortinas de
+                  agua u otros dispositivos cerca de la fuente, protección
+                  ocular y, en exposición constante, casco con visera y ropa
+                  resistente al calor.
+                </li>
+                <li>
+                  <strong>Ultravioletas (soldadura, etc.):</strong> cabinas o
+                  pantallas protectoras, paredes que no reflejen radiación, y
+                  formación específica más anteojos/máscaras con cristales
+                  coloreados, guantes y cremas protectoras.
+                </li>
+                <li>
+                  <strong>Microondas (100 MHz–100 GHz):</strong> hasta 10 mW/cm²
+                  se permite exposición continua de 8 h/día; entre 10 y 25
+                  mW/cm² la exposición se limita a 10 minutos por hora; por
+                  encima de 25 mW/cm² no se permite exposición.
+                </li>
+              </ul>
+            </article>
+
+            <article class="chapter" id="cap11" style="--accent: var(--green)">
+              <div class="chapter-head">
+                <h3><span class="cap-no">11</span>Ventilación</h3>
+                <span class="art-range">Art. 64–70</span>
+              </div>
+              <p>
+                La ventilación debe mantener condiciones ambientales saludables,
+                priorizando la ventilación natural.
+              </p>
+              <ul>
+                <li>
+                  La ventilación mínima se calcula según el cubaje del local por
+                  persona y la actividad: por ejemplo, para actividad sedentaria
+                  con 3 m³ por persona se requieren 43 m³/h de aire, mientras
+                  que con 15 m³ por persona bastan 12 m³/h; para actividad
+                  moderada los valores van de 65 a 18 m³/h en el mismo rango.
+                </li>
+                <li>
+                  Si hay contaminación o condiciones perjudiciales (carga
+                  térmica, gases, polvos), la ventilación debe evitar zonas de
+                  estancamiento y mantener niveles adecuados de oxígeno.
+                </li>
+                <li>
+                  Cuando no sea posible cumplir estos requisitos por razones
+                  fundadas, la autoridad puede autorizar el trabajo con
+                  precauciones adicionales.
+                </li>
+                <li>
+                  Los sistemas de extracción deben tener entradas de aire que
+                  reemplacen el aire extraído, y los equipos de tratamiento de
+                  contaminantes no deben generar contaminación adicional durante
+                  su descarga o limpieza.
+                </li>
+              </ul>
+            </article>
+
+            <article class="chapter" id="cap12" style="--accent: var(--green)">
+              <div class="chapter-head">
+                <h3><span class="cap-no">12</span>Iluminación y color</h3>
+                <span class="art-range">Art. 71–84</span>
+              </div>
+              <p>
+                La iluminación debe adaptarse a la tarea: composición espectral
+                adecuada, sin efecto estroboscópico, sin deslumbramientos
+                directos ni reflejados, y con uniformidad, sombras y contrastes
+                apropiados. Los valores concretos de iluminancia, sus relaciones
+                y la uniformidad exigida están en el Anexo IV.
+              </p>
+              <ul>
+                <li>
+                  <strong>Iluminación de emergencia:</strong> obligatoria en
+                  trabajos nocturnos o sin luz natural diurna; debe entregar al
+                  menos 30 lux a 80 cm del suelo y activarse automáticamente
+                  ante un corte de energía.
+                </li>
+                <li>
+                  <strong>Colores de seguridad:</strong> se usan para
+                  identificar personas, lugares y objetos y prevenir accidentes
+                  (valores exactos en el Anexo IV).
+                </li>
+                <li>
+                  <strong>Señalización de circulación:</strong> pasillos y zonas
+                  de cruce con grúas u otros transportes se marcan con franjas
+                  de colores contrastantes; los caminos de evacuación y salidas
+                  se indican con líneas y flechas amarillas.
+                </li>
+                <li>
+                  Las partes móviles de máquinas se pintan de forma que se
+                  distinga rápidamente qué se mueve y qué permanece fijo, y las
+                  cañerías se pintan según el código del Anexo IV.
+                </li>
+                <li>
+                  Toda señalización debe mantenerse en buenas condiciones de
+                  visibilidad, repintándose periódicamente con pinturas
+                  resistentes y durables.
+                </li>
+              </ul>
+              <div
+                class="swatches"
+                aria-label="Ejemplos de colores de seguridad típicos del Anexo IV"
+              >
+                <span class="swatch"
+                  ><span class="dot" style="background: #c0392b"></span>Rojo —
+                  peligro / incendio</span
+                >
+                <span class="swatch"
+                  ><span class="dot" style="background: #f4b400"></span>Amarillo
+                  — atención / precaución</span
+                >
+                <span class="swatch"
+                  ><span class="dot" style="background: #2f5d8a"></span>Azul —
+                  obligación / información</span
+                >
+                <span class="swatch"
+                  ><span class="dot" style="background: #3f7a5d"></span>Verde —
+                  seguridad / evacuación</span
+                >
+              </div>
+            </article>
+
+            <article class="chapter" id="cap13" style="--accent: var(--green)">
+              <div class="chapter-head">
+                <h3><span class="cap-no">13</span>Ruidos y vibraciones</h3>
+                <span class="art-range">Art. 85–94</span>
+              </div>
+              <p>
+                Ningún trabajador puede superar la dosis de nivel sonoro
+                continuo equivalente fijada en el Anexo V. Cuando se supera, la
+                reducción debe seguir un orden estricto de prioridades.
+              </p>
+              <ul>
+                <li>
+                  <strong>Orden de corrección:</strong> primero medidas de
+                  ingeniería (fuente, vía de transmisión o receptor); si no
+                  alcanza, protección auditiva; y solo si eso tampoco es
+                  suficiente, reducir los tiempos de exposición.
+                </li>
+                <li>
+                  Si las medidas de ingeniería son impracticables por razones
+                  fundadas, se vuelve obligatorio el uso de protectores
+                  auditivos para todo el personal expuesto.
+                </li>
+                <li>
+                  Al calcular el nivel sonoro con protectores, se resta la
+                  atenuación certificada del equipo según el procedimiento del
+                  Anexo V.
+                </li>
+                <li>
+                  Quien esté expuesto a más de 85 dB(A) debe someterse a
+                  exámenes audiométricos; si se detecta pérdida auditiva
+                  persistente, debe usar protección continua o ser transferido a
+                  tareas sin ruido.
+                </li>
+                <li>
+                  Los límites de ultrasonido, infrasonido y vibraciones también
+                  están fijados en el Anexo V, y si se superan deben adoptarse
+                  correcciones.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <!-- ===================== TÍTULO V ===================== -->
+        <section style="--accent: var(--amber)">
+          <div class="titulo">
+            <p class="num">Título V · Capítulos 14 a 18</p>
+            <h2>Instalaciones, equipos y trabajos con riesgos especiales</h2>
+            <p class="desc">
+              El bloque más extenso: electricidad, máquinas y herramientas,
+              equipos de izaje y transporte, recipientes a presión, sustancias
+              peligrosas y protección contra incendios.
+            </p>
+          </div>
+          <div class="chapters">
+            <article class="chapter" id="cap14" style="--accent: var(--amber)">
+              <div class="chapter-head">
+                <h3><span class="cap-no">14</span>Instalaciones eléctricas</h3>
+                <span class="art-range">Art. 95–102</span>
+              </div>
+              <p>
+                Toda instalación y equipo eléctrico debe evitar riesgos a
+                personas y bienes, cumpliendo normas técnicas o, en su defecto,
+                las pautas de este capítulo y del Anexo VI.
+              </p>
+              <ul>
+                <li>
+                  Las instalaciones de más de 1000 V deben ser aprobadas por el
+                  responsable del Servicio de Higiene y Seguridad del
+                  establecimiento.
+                </li>
+                <li>
+                  El mantenimiento solo puede hacerlo personal capacitado y
+                  autorizado, con verificaciones periódicas registradas según un
+                  programa de seguridad.
+                </li>
+                <li>
+                  Se extreman las precauciones en salas de baterías, locales con
+                  materiales inflamables o explosivos, y ambientes húmedos o con
+                  sustancias corrosivas.
+                </li>
+                <li>
+                  Deben adoptarse medidas para eliminar la electricidad
+                  estática, sobre todo en atmósferas explosivas, y disponer de
+                  protección contra descargas atmosféricas con puestas a tierra
+                  propias e independientes.
+                </li>
+              </ul>
+            </article>
+
+            <article class="chapter" id="cap15" style="--accent: var(--amber)">
+              <div class="chapter-head">
+                <h3><span class="cap-no">15</span>Máquinas y herramientas</h3>
+                <span class="art-range">Art. 103–137</span>
+              </div>
+              <p>
+                El capítulo más largo del decreto: cubre máquinas,
+                transmisiones, herramientas manuales y motorizadas, aparatos
+                para izar, transportadores, vehículos internos, ferrocarriles
+                industriales y ascensores/montacargas.
+              </p>
+              <ul>
+                <li>
+                  <strong>Máquinas y resguardos:</strong> toda máquina riesgosa
+                  debe tener protección adecuada; las transmisiones (ejes,
+                  poleas, engranajes) llevan resguardos específicos, y los
+                  resguardos deben ser eficaces, resistentes, ajustables, no
+                  obstruir la visión ni generar riesgos por sí mismos.
+                </li>
+                <li>
+                  <strong>Bloqueo de máquinas averiadas (tipo LOTO):</strong>
+                  una máquina riesgosa o averiada se señaliza prohibiendo su
+                  manejo y se bloquea su interruptor con candado, cuya llave
+                  queda en poder del responsable de la reparación.
+                </li>
+                <li>
+                  <strong>Herramientas manuales:</strong> deben estar en buen
+                  estado, sin defectos ni desgastes, con mangos adecuados y
+                  aislantes cuando corresponda; se prohíbe dejarlas en pasillos
+                  o lugares elevados desde donde puedan caer.
+                </li>
+                <li>
+                  <strong>Aparatos para izar:</strong> deben indicar
+                  visiblemente la carga máxima, elevarse y descenderse
+                  lentamente y en vertical, revisarse a diario por el operador y
+                  trimestralmente por personal especializado, y frenar cargas
+                  hasta 1,5 veces la admisible. Las grúas requieren factores de
+                  seguridad de 3 a 6 según el componente (ganchos, partes
+                  estructurales, cables).
+                </li>
+                <li>
+                  <strong>Aparejos (cadenas, cables, cuerdas, ganchos):</strong>
+                  factores de seguridad mínimos de 5 (cadenas), 6 (cables) y 10
+                  (cuerdas), con inspección diaria y descarte ante desgaste,
+                  nudos o hilos rotos por encima de ciertos porcentajes.
+                </li>
+                <li>
+                  <strong>Transportadores:</strong> cintas, rodillos,
+                  helicoidales y neumáticos deben tener resguardos, frenos,
+                  drenajes y protecciones para impedir el arrastre de personas o
+                  la caída de materiales sobre zonas de trabajo.
+                </li>
+                <li>
+                  <strong>Vehículos internos:</strong> autoelevadores y
+                  tractores deben indicar su carga máxima, tener frenos, luces,
+                  avisos acústicos, matafuegos y asientos que atenúen
+                  vibraciones; solo los conducen operarios capacitados.
+                </li>
+                <li>
+                  <strong>Ferrocarriles internos:</strong> distancias mínimas
+                  entre vías y respecto de muros (0,75 m, reducible a 0,50 m
+                  ante obstáculos aislados), señales acústicas y visuales, y una
+                  lista de maniobras prohibidas (cruzar frente a vagones en
+                  movimiento, montarse en topes, empujar entre topes, etc.).
+                </li>
+                <li>
+                  <strong>Ascensores y montacargas:</strong> cerraduras
+                  electromecánicas en puertas exteriores, contacto eléctrico que
+                  detiene la cabina si la puerta de cabina se abre más de 0,025
+                  m, apertura manual de emergencia, límites de carrera, freno de
+                  seguridad ante exceso de velocidad (40–50% sobre la normal) y
+                  cartel visible con la carga o cantidad de pasajeros admitida.
+                </li>
+              </ul>
+            </article>
+
+            <article class="chapter" id="cap16" style="--accent: var(--amber)">
+              <div class="chapter-head">
+                <h3>
+                  <span class="cap-no">16</span>Aparatos que pueden desarrollar
+                  presión interna
+                </h3>
+                <span class="art-range">Art. 138–144</span>
+              </div>
+              <p>
+                Todo aparato a presión debe tener instrucciones detalladas y
+                visibles sobre sus dispositivos de seguridad, maniobras
+                permitidas y prohibidas, y procedimientos ante riesgo o avería;
+                solo lo manejan trabajadores capacitados.
+              </p>
+              <ul>
+                <li>
+                  <strong>Calderas:</strong> inspección y certificación anual
+                  por la empresa instaladora o una especializada; control
+                  continuo del nivel de agua, purgas periódicas, apertura
+                  completa de válvulas de desagüe cada 24 h, y enfriamiento
+                  mínimo de 8 horas tras reducir la presión de vapor.
+                </li>
+                <li>
+                  Las calderas deben tener válvulas de seguridad y presostatos
+                  que corten el combustible al alcanzar valores prefijados; las
+                  de agua caliente requieren acuastato, y las que usan gas
+                  requieren doble válvula solenoide de corte, revisada cada 6
+                  meses, y un circuito de seguridad probado a diario.
+                </li>
+                <li>
+                  <strong>Almacenamiento de gases a presión:</strong> cantidades
+                  limitadas al consumo previsto, asegurados contra caídas,
+                  alejados de fuentes de calor y de la luz solar directa, en
+                  locales resistentes al fuego con cartel de "peligro de
+                  explosión"; prohibido usar grasas o aceites en cilindros de
+                  oxígeno, y los de acetileno deben reposar en vertical al menos
+                  12 horas antes de su uso.
+                </li>
+                <li>
+                  Cualquier otro aparato a presión debe contar con válvulas de
+                  seguridad, presostatos o elementos equivalentes que corten el
+                  suministro ante una sobrepresión.
+                </li>
+              </ul>
+            </article>
+
+            <article class="chapter" id="cap17" style="--accent: var(--amber)">
+              <div class="chapter-head">
+                <h3>
+                  <span class="cap-no">17</span>Trabajos con riesgos especiales
+                </h3>
+                <span class="art-range">Art. 145–159</span>
+              </div>
+              <p>
+                Agrupa las actividades con sustancias infectantes, tóxicas,
+                corrosivas o explosivas, materiales de origen animal o vegetal,
+                trabajos hiperbáricos y soldadura/corte.
+              </p>
+              <ul>
+                <li>
+                  <strong>Sustancias peligrosas en general:</strong> deben
+                  usarse las menos nocivas posibles, almacenarse y manipularse
+                  en lugares aislados por personal capacitado, preferentemente
+                  en circuitos cerrados con ventilación de respaldo; cada
+                  establecimiento debe tener un plan de seguridad visible para
+                  casos de pérdidas o escapes, y los envases deben rotularse con
+                  su contenido y precauciones.
+                </li>
+                <li>
+                  <strong>Explosivos:</strong> se rigen por lo reglamentado por
+                  Fabricaciones Militares.
+                </li>
+                <li>
+                  <strong>Sustancias corrosivas:</strong> locales con
+                  ventilación permanente y avenamiento, envases con cierre hacia
+                  arriba y control diario, transvase por gravedad o sistemas
+                  seguros, sin apilamiento, y protocolo de neutralización ante
+                  derrames.
+                </li>
+                <li>
+                  <strong>Alarmas y limpieza:</strong> instalaciones con
+                  sustancias peligrosas llevan alarmas acústicas y visuales, y
+                  los locales deben tener paredes y pisos lisos e impermeables
+                  con declive hacia desagües.
+                </li>
+                <li>
+                  <strong>Materiales de origen animal o vegetal</strong>
+                  (huesos, pieles, lana, etc.): desinfección previa cuando el
+                  proceso lo permite, y prohibición de acumular materia orgánica
+                  en descomposición salvo en recipientes cerrados.
+                </li>
+                <li>
+                  <strong>Trabajos hiperbáricos:</strong> se rigen por la
+                  normativa de la Armada Nacional; en general, exigen
+                  descompresión gradual y programada, cámaras de descompresión
+                  bien equipadas, ventilación adecuada, reservas de energía y
+                  aire, y control médico periódico del personal con registro de
+                  exposiciones.
+                </li>
+                <li>
+                  <strong>Soldadura y corte:</strong> ventilación e iluminación
+                  adecuadas, personal capacitado con equipo de protección
+                  personal, ropa libre de grasas o aceites, y medidas
+                  específicas para soldadura autógena (almacenamiento separado
+                  de cilindros de oxígeno y acetileno, generadores bien
+                  ventilados, válvulas hidráulicas de seguridad) y soldadura
+                  eléctrica (puesta a tierra, límites de tensión de 50 V en
+                  locales conductores, pantallas de doble mirilla).
+                </li>
+                <li>
+                  <strong>Espacios confinados:</strong> ventilación mecánica que
+                  arranca antes de ingresar y no se detiene hasta que el
+                  trabajador sale; uso de cinturón de seguridad, cable de vida y
+                  un observador externo durante toda la tarea.
+                </li>
+                <li>
+                  <strong
+                    >Recipientes que contuvieron sustancias inflamables:</strong
+                  >
+                  antes de soldar o cortar deben limpiarse y verificarse, o
+                  llenarse con agua o gas inerte; si se desconoce el contenido
+                  previo, se trata siempre como si hubiera sido explosivo o
+                  inflamable.
+                </li>
+              </ul>
+            </article>
+
+            <article
+              class="chapter"
+              id="cap18"
+              style="--accent: var(--redDeep)"
+            >
+              <div class="chapter-head">
+                <h3>
+                  <span class="cap-no">18</span>Protección contra incendios
+                </h3>
+                <span class="art-range">Art. 160–162</span>
+              </div>
+              <p>
+                Reúne las condiciones de construcción, instalación y
+                equipamiento que buscan cinco objetivos: dificultar el inicio
+                del fuego, evitar su propagación y la de gases tóxicos, asegurar
+                la evacuación, facilitar el trabajo de los bomberos y disponer
+                de sistemas de detección y extinción.
+              </p>
+              <ul>
+                <li>
+                  Cuando un edificio se usa para fines diversos, cada parte
+                  recibe la protección correspondiente a su uso; si cambia de
+                  uso, debe adecuarse a los requisitos del nuevo destino.
+                </li>
+                <li>
+                  La autoridad competente puede coordinar con la
+                  Superintendencia de Bomberos de la Policía Federal el
+                  proyecto, ejecución y fiscalización de las protecciones, y
+                  exigir medidas adicionales a las de este capítulo.
+                </li>
+                <li>
+                  Estructuras portantes y muros deben construirse con materiales
+                  incombustibles cuya resistencia al fuego se determina según
+                  las tablas del Anexo VII; un elemento resistente al fuego debe
+                  estar soportado por otros de resistencia igual o mayor.
+                </li>
+                <li>
+                  Tras un incendio, toda estructura afectada debe someterse a
+                  una pericia técnica antes de rehabilitarse, con sus
+                  conclusiones informadas a la autoridad competente.
+                </li>
+                <li>
+                  Prohibido usar fuentes de calor en ambientes inflamables,
+                  explosivos o con polvo combustible sin instalaciones
+                  blindadas; chimeneas y conductos de gases calientes deben
+                  mantenerse a más de 1 metro de cualquier material combustible.
+                </li>
+                <li>
+                  Cañerías de vapor o agua caliente deben instalarse lejos de
+                  materiales combustibles y señalizarse para advertir el riesgo
+                  de contacto; los equipos a combustible líquido o gaseoso
+                  requieren dispositivos automáticos de corte de suministro.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <!-- ===================== ANEXOS ===================== -->
+        <section class="anexos" id="anexos">
+          <h2>Anexos técnicos referenciados</h2>
+          <p class="desc">
+            El Anexo I remite constantemente a otros anexos donde están los
+            valores numéricos, tablas y procedimientos de medición. Esta tabla
+            los ubica rápidamente según el capítulo que los menciona.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Anexo</th>
+                <th>Contenido</th>
+                <th>Capítulos que lo citan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Anexo II</td>
+                <td>
+                  Instrumental y método para evaluar condiciones higrotérmicas y
+                  carga térmica; tablas de calor metabólico.
+                </td>
+                <td>Cap. 8 — Carga térmica</td>
+              </tr>
+              <tr>
+                <td>Anexo III</td>
+                <td>
+                  Tablas de concentraciones máximas permisibles de contaminantes
+                  en el aire.
+                </td>
+                <td>Cap. 9 — Contaminación ambiental</td>
+              </tr>
+              <tr>
+                <td>Anexo IV</td>
+                <td>
+                  Niveles de iluminancia, relaciones de iluminancia, uniformidad
+                  y código de colores de seguridad y señalización.
+                </td>
+                <td>Cap. 12 — Iluminación y color</td>
+              </tr>
+              <tr>
+                <td>Anexo V</td>
+                <td>
+                  Procedimiento de medición del nivel sonoro continuo
+                  equivalente, dosis admisibles y límites de ultrasonido,
+                  infrasonido y vibraciones.
+                </td>
+                <td>Cap. 13 — Ruidos y vibraciones</td>
+              </tr>
+              <tr>
+                <td>Anexo VI</td>
+                <td>
+                  Especificaciones de proyecto y mantenimiento de instalaciones
+                  eléctricas, incluida la eliminación de electricidad estática.
+                </td>
+                <td>Cap. 14 — Instalaciones eléctricas</td>
+              </tr>
+              <tr>
+                <td>Anexo VII</td>
+                <td>
+                  Definiciones técnicas y tablas de resistencia al fuego de
+                  materiales y estructuras.
+                </td>
+                <td>Cap. 18 — Protección contra incendios</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      <div>
+        Resumen elaborado a partir del Anexo I del Decreto N.º 351/79 (texto
+        consolidado, Infoleg). Tiene carácter orientativo: para cualquier
+        trámite, auditoría o decisión formal de cumplimiento normativo, debe
+        consultarse el texto oficial vigente y sus actualizaciones (incluidos
+        los Decretos 1057/2003 y 1338/96, y la Resolución 523/95).
+        <strong
+          style="display: inline-block; margin-top: 0.5rem; color: #c9cdd2"
+          >📄 Material de libre acceso — puede ser compartido y utilizado
+          libremente con fines educativos o de consulta profesional.</strong
+        >
+      </div>
+      <div class="foot-grid">
+        <span>Ley N.º 19.587 — Higiene y Seguridad en el Trabajo</span>
+        <div
+          style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap"
+        >
+          <a
+            href="https://www.linkedin.com/in/tiago-raminelli/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="display: inline-flex; align-items: center; gap: 6px"
+            ><i class="fab fa-linkedin"></i> LinkedIn</a
+          >
+          <a
+            href="https://github.com/tiagoraminelli"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="display: inline-flex; align-items: center; gap: 6px"
+            ><i class="fab fa-github"></i> GitHub</a
+          >
+          <a
+            href="https://servicios.infoleg.gob.ar/infolegInternet/anexos/30000-34999/32030/dto351-1979-anexo1.htm"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Ver texto completo en Infoleg ↗</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Mobile nav toggle
+      const toggle = document.getElementById("navToggle");
+      const sidebar = document.getElementById("sidebar");
+      toggle?.addEventListener("click", () => {
+        const collapsed = sidebar.classList.toggle("collapsed");
+        toggle.setAttribute("aria-expanded", String(!collapsed));
+      });
+      // start collapsed on mobile
+      if (window.innerWidth <= 900) sidebar.classList.add("collapsed");
+
+      // Scrollspy
+      const links = Array.from(document.querySelectorAll(".nav-link"));
+      const targets = links
+        .map((l) => document.querySelector(l.getAttribute("href")))
+        .filter(Boolean);
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const id = "#" + entry.target.id;
+              links.forEach((l) =>
+                l.classList.toggle("active", l.getAttribute("href") === id),
+              );
+            }
+          });
+        },
+        { rootMargin: "-30% 0px -60% 0px" },
+      );
+
+      targets.forEach((t) => observer.observe(t));
+    </script>
+  </body>
+</html>
